@@ -51,25 +51,8 @@ class BinarySearchTree {
   }
 
   has(data) {
-    if (this.root_node === null) {
-      return false;
-    }
-    let cur_node = this.root_node;
-    while (1) {
-      if (cur_node.data < data) {
-        if (cur_node.right === null) {
-          return false;
-        }
-        cur_node = cur_node.right;
-      } else if (cur_node.data > data) {
-        if (cur_node.left === null) {
-          return false;
-        }
-        cur_node = cur_node.left;
-      } else {
-        return true;
-      }
-    }
+    let node = this.find(data);
+    return node !== null;
   }
 
   find(data) {
